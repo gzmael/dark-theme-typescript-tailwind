@@ -23,15 +23,11 @@ export const ThemeProvider: React.FC<Props> = ({ children }: Props) => {
       !!window.matchMedia &&
       window.matchMedia('prefer-color-scheme: dark').matches;
 
-    console.log('usePreference', usePreference);
-
     const mode: Theme =
       (window.localStorage.getItem('theme') as Theme) ||
       (usePreference ? 'dark' : 'light');
-    console.log('mode pre-set', mode);
 
     setTheme(mode);
-    console.log('post pre-set', mode);
 
     document.documentElement.className = '';
     document.documentElement.classList.add(`theme-${theme}`);
@@ -39,7 +35,6 @@ export const ThemeProvider: React.FC<Props> = ({ children }: Props) => {
   }, []);
 
   useEffect(() => {
-    console.log('Mudou com o toggleMode');
     window.localStorage.setItem('theme', theme);
     document.documentElement.className = '';
     document.documentElement.classList.add(`theme-${theme}`);

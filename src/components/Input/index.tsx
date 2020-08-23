@@ -21,10 +21,8 @@ const Input: React.FC<InputProps> = ({ name, label, ...rest }: InputProps) => {
     });
   }, [fieldName, registerField]);
   return (
-    <Container>
-      <label htmlFor={fieldName} className={error && 'error'}>
-        {label}
-      </label>
+    <Container className={error && 'error'}>
+      <label htmlFor={fieldName}>{label}</label>
       <InputGroup>
         <input
           id={fieldName}

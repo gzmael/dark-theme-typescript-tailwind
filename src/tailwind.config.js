@@ -116,8 +116,14 @@ module.exports = {
         secondary: 'var(--bg-secondary)',
         ternary: 'var(--bg-ternary)',
       },
+      spacing: {
+        '88': '24rem',
+      },
     },
     variants: {
+      height: {
+        '80': '20rem',
+      },
       backgroundColor: [
         'responsive',
         'hover',
