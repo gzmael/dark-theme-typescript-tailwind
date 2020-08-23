@@ -1,6 +1,8 @@
 import React, { useContext, useRef } from 'react';
 import { SubmitHandler, FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
+import { IoIosMoon, IoMdSunny } from 'react-icons/io';
+
 import Button from 'src/components/Button';
 import Input from 'src/components/Input';
 import { ThemeContext } from '../../context/ThemeContext';
@@ -8,7 +10,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 import logoColor from '../../assets/images/logo-h-color.svg';
 import logoWhite from '../../assets/images/logo-h-white.svg';
 
-import { Container, Box } from './styles';
+import { Container, Box, ButtonTheme } from './styles';
 
 const SingIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
@@ -40,9 +42,12 @@ const SingIn: React.FC = () => {
             label="Senha"
             placeholder="Informe sua Senha"
           />
-          <Button onClick={toggleTheme}>{`Mudar Tema ${theme}`}</Button>
+          <Button>Entrar</Button>
         </Form>
       </Box>
+      <ButtonTheme type="button" onClick={toggleTheme}>
+        {theme === 'dark' ? <IoMdSunny size={24} /> : <IoIosMoon size={24} />}
+      </ButtonTheme>
     </Container>
   );
 };

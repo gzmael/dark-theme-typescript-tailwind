@@ -4,7 +4,7 @@ import bgImgHeader from '../../assets/images/bg-header-form.png';
 import bgImgHeaderLight from '../../assets/images/bg-header-form-light.png';
 
 export const Container = styled.div`
-  ${tw`bg-primary h-screen w-screen flex flex-col justify-center items-center px-3 w-full`}
+  ${tw`bg-primary h-screen w-screen flex flex-col justify-center items-center px-3 w-full transition-colors ease-linear duration-200`}
   > img {
     ${tw`w-2/3 mb-4`}
   }
@@ -35,7 +35,11 @@ export const Box = styled.main`
     }
 
     button {
-      ${tw`bg-teal-500 border-0`}
+      ${tw`bg-teal-500 border-0 px-4 py-3 flex items-center justify-center text-primary w-full rounded font-body font-bold`}
     }
   }
+`;
+
+export const ButtonTheme = styled.button`
+  ${tw`bg-transparent border-0 text-ternary mt-4`}
 `;
